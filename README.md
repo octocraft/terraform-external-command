@@ -5,7 +5,7 @@ This module reads an output from a command/script.
 ## Why
 Terraform does not provide the possibility (yet) to store custom variables in `null_resource`, which means that `null_resource` with `local-exec` can be used to created/update/delete resources through external commands, but they can not be referenced.
 
-This module helps to encapsulate and reference not (yet fully) supported resources.
+The `data "external"` module helps to encapsulate and reference not (yet fully) supported resources, but it lacks cross-plattform support. This module is a wrapper which allows you to run a bash script on window and unix.
 
 ## Usage
 
