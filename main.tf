@@ -3,7 +3,7 @@ terraform {
 }
 
 module "os" {
-  source = "github.com/octocraft/terraform-module-ostype"
+  source = "git::https://github.com/octocraft/terraform-module-ostype?ref=v1.0.0"
 }
 
 locals {

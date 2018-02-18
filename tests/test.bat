@@ -1,9 +1,9 @@
 @echo off
 
 :: Check if Terraform is present
-where terraform >nul 2>&1
+terraform version >nul 2>&1
 if %ERRORLEVEL% neq 0 (
-    echo error: terraform not found in %%PATH%%.
+    echo error: terraform not found
     goto :EOF
 )
 
