@@ -13,6 +13,7 @@ before_install:
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install --install-recommends winehq-stable; fi
     # Terraform
+    - echo "{\"command\":\"echo hello world\"}" | ./run.sh
     -  cd tests
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -fSL "https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_linux_amd64.zip" -o terraform_linux.zip; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then curl -fSL "https://releases.hashicorp.com/terraform/0.11.3/terraform_0.11.3_windows_386.zip" -o terraform_win32.zip; fi
