@@ -1,5 +1,8 @@
 #!/bin/bash
 
+script_dir_realtive=${0%/*}
+script_dir=$(pwd)$([ ! -z "$script_dir_realtive" ] && printf "%s" "/$script_dir_realtive")
+
 case "$OSTYPE" in
     darwin*)  OS="darwin";  ;;
     freebsd*) OS="freebsd"; ;;
@@ -10,10 +13,10 @@ case "$OSTYPE" in
 esac;  
 
 # Add module binaries to PATH
-PATH=$PATH:"$script_dir/bin/$OS"
+PATH="$PATH:$script_dir/bin/$OS"
 
 # Check if jq is present
-if ! [ -x "$(jq --version 2>/dev/null)" ]; then
+if ! [ -x "$(command -v jq 2>/dev/null)" ]; then
     echo 'Error: unsupported platform' 1>&2
     exit 2
 fi
