@@ -12,7 +12,7 @@ locals {
 }
 
 data "external" "bash" {
-  program = ["${local.module_path}/run${local.extension}"]
+  program = ["${local.module_path}/run${local.extension}", "${local.module_path}"]
 
   query = {
     module_path = "${var.module_path}"

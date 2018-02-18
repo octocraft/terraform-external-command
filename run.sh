@@ -1,13 +1,5 @@
 #!/bin/bash
 
-echo "0: $0"
-
-script_dir_realtive=${0%/*}
-script_dir=$(pwd)$([ ! -z "$script_dir_realtive" ] && printf "%s" "/$script_dir_realtive")
-
-echo "script_dir: $script_dir"
-echo "OSTYPE: $OSTYPE"
-
 case "$OSTYPE" in
     darwin*)  OS="darwin";  ;;
     freebsd*) OS="freebsd"; ;;
@@ -18,9 +10,7 @@ case "$OSTYPE" in
 esac;  
 
 # Add module binaries to PATH
-PATH="$PATH:$script_dir/bin/$OS"
-
-echo "PATH: $PATH"
+PATH="$PATH:$1/bin/$OS"
 
 # Check if jq is present
 if ! [ -x "$(command -v jq 2>/dev/null)" ]; then
