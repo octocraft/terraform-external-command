@@ -1,5 +1,8 @@
 # data_external_command
 
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+
 This module reads an output from a command/script.
 
 ## Why
@@ -89,3 +92,7 @@ If you don't care about Windows you can safely use any commands which are availa
 
 MIT
 
+[link-travis]: https://travis-ci.org/octocraft/terraform-external-command
+
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/octocraft/terraform-external-command/master.svg?style=flat-square

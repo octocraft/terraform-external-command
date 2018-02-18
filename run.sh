@@ -13,8 +13,8 @@ esac;
 PATH=$PATH:"$script_dir/bin/$OS"
 
 # Check if jq is present
-if ! [ -x "$(command -v jq 2>/dev/null)" ]; then
-    echo 'error: unsupported platform.' 1>&2
+if ! [ -x "$(jq --version 2>/dev/null)" ]; then
+    echo 'Error: unsupported platform' 1>&2
     exit 2
 fi
 
