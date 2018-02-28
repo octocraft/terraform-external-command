@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BASEDIR="$1"
+
 case "$OSTYPE" in
     darwin*)  OS="darwin";  ;;
     freebsd*) OS="freebsd"; ;;
@@ -9,8 +11,14 @@ case "$OSTYPE" in
     windows*) OS="windows"; ;;
 esac;  
 
+case "$HOSTTYPE" in
+    arm*)       ARCH="arm"          ;;
+    i386*)      ARCH="368"          ;;
+    x86_64*)    ARCH="amd64"        ;;
+esac;
+
 # Add module binaries to PATH
-PATH="$PATH:$1/bin/$OS"
+PATH="$PATH:$BASEDIR/bin/$OS/$ARCH"
 
 # Check if jq is present
 if ! [ -x "$(command -v jq 2>/dev/null)" ]; then

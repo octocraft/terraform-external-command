@@ -80,7 +80,7 @@ foo = bar
 
 ## Notes
 
-This module ships with binaries for all platforms supported by Terraform but only the 64 bit versions (Maс OSX, FreeBSD, Linux, OpenBSD, Solaris and Windows).
+This module ships with binaries for all platforms supported by Terraform (Maс OSX, FreeBSD, Linux, OpenBSD, Solaris and Windows), except linux/arm.
 
 It comes with a bash shell for Windows, but it does not ship with any functions (i.e. you will most likely not be able to run many scripts due to dependencies on Unix functions). Also the shell used is quite old (win bash uses bash 1.14.2). 
 
