@@ -34,3 +34,7 @@ if command -v wine; then
     wine cmd /c "set PATH=%cd%\\vendor\\bin\\windows\\386;%PATH% && test.bat"
 fi
 
+### Clean Up
+rm -f sbpl-pkg.sh.lock*
+rm -rf vendor
+rm -f terraform.tfstate*
