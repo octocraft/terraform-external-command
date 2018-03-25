@@ -5,6 +5,6 @@
 *.tfstate
 *.tfstate.*
 
-# .tfvars files
-*.tfvars
+# vendor 
+tests/vendor
 
