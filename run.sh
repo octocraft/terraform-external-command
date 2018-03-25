@@ -30,4 +30,11 @@ fi
 eval "$(jq -r '@sh "command=\(.command) module_path=\(.module_path)"')"
 
 # Run command
-eval "$command"
+output="$(eval "$command")"
+result=$?
+
+if [ -z "$output" ]; then
+    printf "{}\n"
+else
+    printf "%s\n" "$output"
+fi
